@@ -6,8 +6,13 @@ const router = express.Router();
 //create the GET request method for this route
 //using '/' because products is the default route
 router.get('/', (req, res, next) => {
+    const product = {
+        name: req.body.name,
+        price: req.body.price,
+    };
     res.status(200).json({
-        message: 'Handling GET request to /products'
+        message: 'Handling GET request to /products',
+        createdProduct: product
     });
 });
 
